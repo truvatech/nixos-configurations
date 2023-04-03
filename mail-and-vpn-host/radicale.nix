@@ -25,9 +25,9 @@ in {
   services.nginx = {
     enable = true;
     virtualHosts = {
-      "cal.DOMAIN.com" = {
-        forceSSL = true;
-        enableACME = true;
+      "cal.cloudnix.ymr" = {
+        #forceSSL = true;
+        #enableACME = true;
         locations."/" = {
           proxyPass = "http://localhost:5232/";
           extraConfig = ''
@@ -40,6 +40,4 @@ in {
       };
     };
   };
-
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
